@@ -4425,3 +4425,475 @@ org.eclipse.core.runtime.CoreException: Launch configuration DemoApplicationTest
 2024-06-13 15:39:10,078 [Worker-228: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-06-13 15:39:10,208 [Worker-228: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
 2024-06-13 15:39:10,219 [Worker-228: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 17:04:15,281 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-06-13 17:04:44,645 [Worker-6: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:demo:0.0.1-SNAPSHOT @ C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\pom.xml.
+2024-06-13 17:04:46,708 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 17:04:46,735 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 17:04:46,772 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 17:05:36,605 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 17:05:36,628 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 17:05:36,632 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 17:09:16,510 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 17:09:16,531 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 17:09:16,537 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 17:13:51,003 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2024-06-13 17:14:14,065 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234 [354])
+2024-06-13 17:14:14,076 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234
+2024-06-13 17:14:14,079 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\aopalliance-1.0.jar
+2024-06-13 17:14:14,080 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\guice-5.1.0.jar
+2024-06-13 17:14:14,081 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpclient-4.5.14.jar
+2024-06-13 17:14:14,082 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpcore-4.4.16.jar
+2024-06-13 17:14:14,083 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jansi-2.4.0.jar
+2024-06-13 17:14:14,084 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jcl-over-slf4j-1.7.36.jar
+2024-06-13 17:14:14,084 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-artifact-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-builder-support-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-compat-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-core-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-embedder-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-3.9.6.jar
+2024-06-13 17:14:14,085 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-builder-3.9.6.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-plugin-api-3.9.6.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-repository-metadata-3.9.6.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-api-1.9.18.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-connector-basic-1.9.18.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-impl-1.9.18.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-named-locks-1.9.18.jar
+2024-06-13 17:14:14,086 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-provider-3.9.6.jar
+2024-06-13 17:14:14,087 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-spi-1.9.18.jar
+2024-06-13 17:14:14,087 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-file-1.9.18.jar
+2024-06-13 17:14:14,087 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-http-1.9.18.jar
+2024-06-13 17:14:14,087 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-wagon-1.9.18.jar
+2024-06-13 17:14:14,087 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-util-1.9.18.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-3.9.6.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-builder-3.9.6.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-shared-utils-3.3.4.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.inject-0.9.0.M2.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.plexus-0.9.0.M2.jar
+2024-06-13 17:14:14,088 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-build-api-0.0.7.jar
+2024-06-13 17:14:14,089 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-cipher-2.0.jar
+2024-06-13 17:14:14,089 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-classworlds-2.7.0.jar
+2024-06-13 17:14:14,089 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-component-annotations-2.1.0.jar
+2024-06-13 17:14:14,089 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-interpolation-1.26.jar
+2024-06-13 17:14:14,090 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-sec-dispatcher-2.0.jar
+2024-06-13 17:14:14,090 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-utils-3.5.1.jar
+2024-06-13 17:14:14,090 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-file-3.5.3.jar
+2024-06-13 17:14:14,091 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-3.5.3.jar
+2024-06-13 17:14:14,091 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-shared-3.5.3.jar
+2024-06-13 17:14:14,091 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-provider-api-3.5.3.jar
+2024-06-13 17:14:14,093 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.0.0.jre [27])
+2024-06-13 17:14:14,094 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava_33.0.0.jre.jar
+2024-06-13 17:14:14,094 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.12 [584])
+2024-06-13 17:14:14,095 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\slf4j.api_2.0.12.jar
+2024-06-13 17:14:14,095 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [44])
+2024-06-13 17:14:14,095 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2024-06-13 17:14:14,095 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.annotation-api_1.3.5 [40])
+2024-06-13 17:14:14,096 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.annotation-api_1.3.5.jar
+2024-06-13 17:14:14,096 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.6.0 [75])
+2024-06-13 17:14:14,100 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.cli_1.6.0.jar
+2024-06-13 17:14:14,101 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [77])
+2024-06-13 17:14:14,105 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2024-06-13 17:14:14,105 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.lang3_3.14.0 [81])
+2024-06-13 17:14:14,106 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.lang3_3.14.0.jar
+2024-06-13 17:14:14,106 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.2 [29])
+2024-06-13 17:14:14,106 [Worker-19: Launching demo] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava.failureaccess_1.0.2.jar
+2024-06-13 17:14:14,113 [Worker-19: Launching demo] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\kulka\OneDrive\Desktop\VanSpring\demo":
+2024-06-13 17:14:14,115 [Worker-19: Launching demo] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always package
+2024-06-13 19:54:49,509 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:54:49,676 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:54:49,695 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:55:10,448 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:55:10,465 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:55:10,474 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:56:12,227 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:56:12,238 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:56:12,249 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:57:49,304 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:57:49,316 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:57:49,335 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:58:02,015 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:58:02,031 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:58:02,048 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:58:20,488 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:58:20,510 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:58:20,521 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:58:37,054 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:58:37,064 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 13 resources from src\main\resources to target\classes
+2024-06-13 19:58:37,075 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:59:02,015 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 19:59:02,028 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:59:02,054 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 19:59:07,305 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 19:59:07,311 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 19:59:07,320 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:01:40,568 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:01:40,583 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:01:40,598 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:01:48,110 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:01:48,122 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:01:48,134 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:02:13,425 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:02:13,427 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:02:13,431 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:03:00,643 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:03:00,697 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:03:00,731 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:09:45,813 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:09:45,825 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:09:45,834 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:10:00,597 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:10:00,613 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:10:00,639 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:12:01,927 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:12:01,937 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:12:01,944 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:12:10,329 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:12:10,342 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:12:10,352 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:13:23,818 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:13:23,837 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:13:23,856 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:13:40,086 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:13:40,098 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:13:40,110 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:13:53,027 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:13:53,035 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:13:53,044 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:20:37,729 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:20:37,743 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:20:37,754 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:21:45,734 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:21:45,742 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:21:45,748 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:26:44,564 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:26:44,578 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:26:44,597 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:28:23,341 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:28:23,345 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:28:23,354 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:28:50,561 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:28:50,564 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:28:50,571 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:29:16,740 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:29:16,756 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:29:16,775 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:29:51,620 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:29:51,637 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:29:51,659 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:30:03,837 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:30:03,840 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:30:03,845 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:30:26,727 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:30:26,741 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:30:26,758 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:30:57,371 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:30:57,383 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:30:57,404 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:31:49,111 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:31:49,125 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:31:49,145 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:32:07,181 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:32:07,194 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:32:07,205 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:32:19,117 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:32:19,127 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:32:19,141 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:33:14,548 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:33:14,557 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:33:14,566 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:33:40,136 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:33:40,144 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:33:40,153 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:34:10,193 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:34:10,198 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:34:10,206 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:34:35,982 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:34:35,993 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:34:36,008 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:35:06,830 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:35:06,845 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:35:06,855 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:35:15,878 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:35:15,884 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:35:15,894 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:35:33,510 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:35:33,514 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:35:33,520 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:35:44,350 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:35:44,367 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:35:44,378 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:35:54,068 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:35:54,080 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:35:54,095 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:36:12,536 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:36:12,545 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:36:12,557 [Worker-58: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:36:30,190 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:36:30,199 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:36:30,208 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:37:46,315 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:37:46,323 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:37:46,330 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:38:04,383 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:38:04,394 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:38:04,402 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:38:12,326 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:38:12,333 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:38:12,343 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:38:49,660 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:38:49,669 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:38:49,680 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:40:39,265 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:40:39,276 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:40:39,301 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:41:10,942 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:41:10,949 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:41:10,960 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:42:01,880 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:42:01,892 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:42:01,907 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:42:18,913 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:42:18,920 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:42:18,931 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:42:34,094 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:42:34,105 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:42:34,116 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:43:00,622 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:43:00,626 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:43:00,636 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:43:21,953 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:43:21,958 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:43:21,964 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:43:39,776 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:43:39,782 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:43:39,790 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:43:50,683 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:43:50,699 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:43:50,725 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:44:00,453 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:44:00,457 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:44:00,466 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:44:12,862 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:44:12,869 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:44:12,886 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:44:24,421 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:44:24,427 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:44:24,432 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:44:50,058 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:44:50,064 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:44:50,071 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:46:18,083 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:46:18,099 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:46:18,114 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:46:42,529 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:46:42,542 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:46:42,552 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:48:42,813 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:48:42,815 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:48:42,818 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:49:30,433 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:49:30,436 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:49:30,442 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:50:27,913 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 20:50:27,916 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:50:27,919 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:54:43,796 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:54:43,824 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:54:43,829 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:55:07,146 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:55:07,161 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:55:07,169 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 20:59:09,768 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 20:59:09,782 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 20:59:09,792 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:01:33,648 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:01:33,687 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:01:33,698 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:02:04,400 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:02:04,408 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:02:04,414 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:52:56,122 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:52:56,151 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:52:56,165 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:53:45,272 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:53:45,277 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:53:45,282 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:53:58,846 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:53:58,869 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:53:58,884 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:55:23,877 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:55:23,887 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:55:23,893 [Worker-83: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:57:47,175 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:57:47,183 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:57:47,190 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:58:30,688 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:58:30,704 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:58:30,716 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 21:58:48,336 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 21:58:48,344 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 14 resources from src\main\resources to target\classes
+2024-06-13 21:58:48,350 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:01:35,192 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:01:35,194 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:01:35,203 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:02:04,098 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:02:04,101 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:02:04,105 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:02:40,829 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:02:40,832 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:02:40,836 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:03:04,250 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2024-06-13 22:03:59,452 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:03:59,455 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:03:59,481 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:04:21,973 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:04:21,977 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:04:21,984 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:04:38,711 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:04:38,720 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:04:38,725 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:06:15,967 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:06:15,970 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:06:15,988 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:06:57,786 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:06:57,788 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:06:57,802 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:07:28,181 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:07:28,186 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:07:28,205 [Worker-88: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:09:19,722 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:09:19,725 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:09:19,734 [Worker-87: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:09:42,869 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:09:42,874 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:09:42,876 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:10:55,305 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:10:55,310 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:10:55,321 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:11:36,256 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-06-13 22:11:36,258 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-06-13 22:11:36,264 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\kulka\OneDrive\Desktop\VanSpring\demo\src\test\resources
+2024-06-13 22:11:57,413 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2024-06-13 22:12:02,384 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234 [354])
+2024-06-13 22:12:02,385 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234
+2024-06-13 22:12:02,388 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\aopalliance-1.0.jar
+2024-06-13 22:12:02,388 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\guice-5.1.0.jar
+2024-06-13 22:12:02,388 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpclient-4.5.14.jar
+2024-06-13 22:12:02,388 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpcore-4.4.16.jar
+2024-06-13 22:12:02,388 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jansi-2.4.0.jar
+2024-06-13 22:12:02,390 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jcl-over-slf4j-1.7.36.jar
+2024-06-13 22:12:02,394 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-artifact-3.9.6.jar
+2024-06-13 22:12:02,397 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-builder-support-3.9.6.jar
+2024-06-13 22:12:02,398 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-compat-3.9.6.jar
+2024-06-13 22:12:02,399 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-core-3.9.6.jar
+2024-06-13 22:12:02,404 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-embedder-3.9.6.jar
+2024-06-13 22:12:02,407 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-3.9.6.jar
+2024-06-13 22:12:02,410 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-builder-3.9.6.jar
+2024-06-13 22:12:02,411 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-plugin-api-3.9.6.jar
+2024-06-13 22:12:02,412 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-repository-metadata-3.9.6.jar
+2024-06-13 22:12:02,412 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-api-1.9.18.jar
+2024-06-13 22:12:02,413 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-connector-basic-1.9.18.jar
+2024-06-13 22:12:02,413 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-impl-1.9.18.jar
+2024-06-13 22:12:02,413 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-named-locks-1.9.18.jar
+2024-06-13 22:12:02,414 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-provider-3.9.6.jar
+2024-06-13 22:12:02,416 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-spi-1.9.18.jar
+2024-06-13 22:12:02,417 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-file-1.9.18.jar
+2024-06-13 22:12:02,419 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-http-1.9.18.jar
+2024-06-13 22:12:02,420 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-wagon-1.9.18.jar
+2024-06-13 22:12:02,422 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-util-1.9.18.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-3.9.6.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-builder-3.9.6.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-shared-utils-3.3.4.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.inject-0.9.0.M2.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.plexus-0.9.0.M2.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-build-api-0.0.7.jar
+2024-06-13 22:12:02,424 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-cipher-2.0.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-classworlds-2.7.0.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-component-annotations-2.1.0.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-interpolation-1.26.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-sec-dispatcher-2.0.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-utils-3.5.1.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-file-3.5.3.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-3.5.3.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-shared-3.5.3.jar
+2024-06-13 22:12:02,425 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-provider-api-3.5.3.jar
+2024-06-13 22:12:02,427 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.0.0.jre [27])
+2024-06-13 22:12:02,436 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava_33.0.0.jre.jar
+2024-06-13 22:12:02,437 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.12 [584])
+2024-06-13 22:12:02,441 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\slf4j.api_2.0.12.jar
+2024-06-13 22:12:02,441 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [44])
+2024-06-13 22:12:02,443 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2024-06-13 22:12:02,443 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.annotation-api_1.3.5 [40])
+2024-06-13 22:12:02,453 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.annotation-api_1.3.5.jar
+2024-06-13 22:12:02,453 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.6.0 [75])
+2024-06-13 22:12:02,458 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.cli_1.6.0.jar
+2024-06-13 22:12:02,460 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [77])
+2024-06-13 22:12:02,473 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2024-06-13 22:12:02,474 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.lang3_3.14.0 [81])
+2024-06-13 22:12:02,476 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.lang3_3.14.0.jar
+2024-06-13 22:12:02,477 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.2 [29])
+2024-06-13 22:12:02,478 [Worker-87: Launching demo (2)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava.failureaccess_1.0.2.jar
+2024-06-13 22:12:02,483 [Worker-87: Launching demo (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\kulka\OneDrive\Desktop\VanSpring\demo":
+2024-06-13 22:12:02,484 [Worker-87: Launching demo (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always package
+2024-06-13 22:19:59,830 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-06-13 22:22:13,889 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2024-06-13 22:22:21,899 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234 [354])
+2024-06-13 22:22:21,907 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234
+2024-06-13 22:22:21,908 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\aopalliance-1.0.jar
+2024-06-13 22:22:21,909 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\guice-5.1.0.jar
+2024-06-13 22:22:21,910 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpclient-4.5.14.jar
+2024-06-13 22:22:21,910 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\httpcore-4.4.16.jar
+2024-06-13 22:22:21,911 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jansi-2.4.0.jar
+2024-06-13 22:22:21,911 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\jcl-over-slf4j-1.7.36.jar
+2024-06-13 22:22:21,912 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-artifact-3.9.6.jar
+2024-06-13 22:22:21,912 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-builder-support-3.9.6.jar
+2024-06-13 22:22:21,913 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-compat-3.9.6.jar
+2024-06-13 22:22:21,913 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-core-3.9.6.jar
+2024-06-13 22:22:21,914 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-embedder-3.9.6.jar
+2024-06-13 22:22:21,914 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-3.9.6.jar
+2024-06-13 22:22:21,914 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-model-builder-3.9.6.jar
+2024-06-13 22:22:21,915 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-plugin-api-3.9.6.jar
+2024-06-13 22:22:21,916 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-repository-metadata-3.9.6.jar
+2024-06-13 22:22:21,916 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-api-1.9.18.jar
+2024-06-13 22:22:21,917 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-connector-basic-1.9.18.jar
+2024-06-13 22:22:21,917 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-impl-1.9.18.jar
+2024-06-13 22:22:21,918 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-named-locks-1.9.18.jar
+2024-06-13 22:22:21,918 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-provider-3.9.6.jar
+2024-06-13 22:22:21,919 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-spi-1.9.18.jar
+2024-06-13 22:22:21,919 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-file-1.9.18.jar
+2024-06-13 22:22:21,920 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-http-1.9.18.jar
+2024-06-13 22:22:21,921 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-transport-wagon-1.9.18.jar
+2024-06-13 22:22:21,922 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-resolver-util-1.9.18.jar
+2024-06-13 22:22:21,922 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-3.9.6.jar
+2024-06-13 22:22:21,923 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-settings-builder-3.9.6.jar
+2024-06-13 22:22:21,923 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\maven-shared-utils-3.3.4.jar
+2024-06-13 22:22:21,924 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.inject-0.9.0.M2.jar
+2024-06-13 22:22:21,924 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\org.eclipse.sisu.plexus-0.9.0.M2.jar
+2024-06-13 22:22:21,925 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-build-api-0.0.7.jar
+2024-06-13 22:22:21,925 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-cipher-2.0.jar
+2024-06-13 22:22:21,926 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-classworlds-2.7.0.jar
+2024-06-13 22:22:21,926 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-component-annotations-2.1.0.jar
+2024-06-13 22:22:21,927 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-interpolation-1.26.jar
+2024-06-13 22:22:21,927 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-sec-dispatcher-2.0.jar
+2024-06-13 22:22:21,927 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\plexus-utils-3.5.1.jar
+2024-06-13 22:22:21,928 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-file-3.5.3.jar
+2024-06-13 22:22:21,928 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-3.5.3.jar
+2024-06-13 22:22:21,929 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-http-shared-3.5.3.jar
+2024-06-13 22:22:21,929 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.eclipse.m2e.maven.runtime_3.9.600.20231203-1234\jars\wagon-provider-api-3.5.3.jar
+2024-06-13 22:22:21,935 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.0.0.jre [27])
+2024-06-13 22:22:21,937 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava_33.0.0.jre.jar
+2024-06-13 22:22:21,938 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.12 [584])
+2024-06-13 22:22:21,939 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\slf4j.api_2.0.12.jar
+2024-06-13 22:22:21,940 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [44])
+2024-06-13 22:22:21,941 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2024-06-13 22:22:21,941 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.annotation-api_1.3.5 [40])
+2024-06-13 22:22:21,943 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\jakarta.annotation-api_1.3.5.jar
+2024-06-13 22:22:21,944 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.6.0 [75])
+2024-06-13 22:22:21,945 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.cli_1.6.0.jar
+2024-06-13 22:22:21,946 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [77])
+2024-06-13 22:22:21,947 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2024-06-13 22:22:21,947 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.lang3_3.14.0 [81])
+2024-06-13 22:22:21,948 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\org.apache.commons.lang3_3.14.0.jar
+2024-06-13 22:22:21,949 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.2 [29])
+2024-06-13 22:22:21,950 [Worker-4: Launching demo (3)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\kulka\OneDrive\Desktop\sts-4.22.1.RELEASE\plugins\com.google.guava.failureaccess_1.0.2.jar
+2024-06-13 22:22:21,958 [Worker-4: Launching demo (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\kulka\OneDrive\Desktop\VanSpring\demo":
+2024-06-13 22:22:21,968 [Worker-4: Launching demo (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always package

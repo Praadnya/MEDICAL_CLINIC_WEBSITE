@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <style>
+        /* General styles */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+		body {
+		    font-family: Arial, sans-serif;
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		    background-color: #f0f8ff; /* Light sky blue background */
+		    padding: 10px;
+		}
+
+        .navbar {
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            padding: 15px 0 15px 0;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0px 2px -2px gray;
+			font-family: 'Merriweather', sans-serif;
+           
+        }
+		
+		.srch{
+			display: flex;
+			flex-direction: row;
+			width : 60%;
+			align-items: center;
+		}
+		
+		.srch-but{
+					
+					width : 20%;
+					padding: 2%
+				}
+
+        .navbar span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+		
+		.navbar .logout-btn {
+		            background-color: rgb(220, 53, 69); /* Red background color */
+		            color: white;
+		            border: none;
+		            padding: 1% 3%;
+		            border-radius: 4px;
+		            cursor: pointer;
+		            text-decoration: none;
+		            margin-left: 25%; /* Space between buttons */
+		        }
+
+		        .navbar .logout-btn:hover {
+		            background-color: rgb(185, 28, 53); /* Darker red on hover */
+		        }
+
+        .content {
+            margin-top: 80px; /* Adjust to avoid overlap with navbar */
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+			
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            width: 100%
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 70%;
+            max-width: 300px;
+            border: 1px solid rgb(12, 194, 226);
+            border-radius: 4px 0 0 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+		
+        }
+
+        button:hover {	
+            background-color: rgb(12, 194, 226);
+        }
+
+        button img {
+            width: 20px;
+            height: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        th, td {
+            padding: 10%;
+            text-align: left;
+            border-bottom: 1px solid rgb(211, 211, 211);
+        }
+
+        th {
+            background-color: rgb(197, 244, 250);
+        }
+
+        a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            input[type="text"], button {
+                width: 95%;
+                margin: 5px auto;
+            }
+
+            form {
+                flex-direction: row;
+                align-items: center;
+				width : 100%;
+            }
+        }
+		
+		
+
+        /* Tablets */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            table, th, td {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            input[type="text"], button {
+                width: 80%;
+                margin: 5px auto;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Large screens (desktops and laptops) */
+        @media (min-width: 1025px) {
+            table, th, td {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            input[type="text"], button {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>Vanamala Clinic</span>
+		<a href="/logout" class="logout-btn">Logout</a>
+    </div>
+    <div class="content">
+        <h1>Patients</h1>
+        <form th:action="@{/patients}" method="get">
+			<div class = "srch">
+            <input type="text" name="keyword" th:value="${keyword}" placeholder="Search by name or phone number">
+            <button class = "srch-but" type="submit">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/search.png" alt="Search">
+            </button>
+			</div>
+        </form>
+        <table>
+            <thead >
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="patient, i : ${patients}">
+                    <td th:text="${patient.name}"></td>
+                    <td th:text="${patient.phone}"></td>
+                    <td>
+                        <a th:href="@{'/patient/' + ${patientIds[i.index]}}">View</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <button style="width: 100%;" onclick="window.location.href='/add-patient'">Add New Patient</button>
+        </div>
+    </div>
+</body>
+</html>

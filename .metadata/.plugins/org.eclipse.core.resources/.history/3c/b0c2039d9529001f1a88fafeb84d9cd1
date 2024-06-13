@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General styles */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f8ff; /* Light sky blue background */
+            padding: 10px;
+        }
+
+        .navbar {
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0px 2px -2px gray;
+            font-family: 'Merriweather', sans-serif;
+        }
+
+        .content {
+            margin-top: 80px; /* Adjust to avoid overlap with navbar */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			background-color: lightgoldenrodyellow;
+			max-width: 30%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+            border: 1px solid rgb(12, 194, 226);
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: rgb(10, 174, 206);
+        }
+
+        .error-message {
+            display: none;
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 600px) {
+            input[type="text"], input[type="password"], button {
+                width: 95%;
+                margin: 5px auto;
+            }
+        }
+
+        /* Tablets */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            input[type="text"], input[type="password"], button {
+                width: 80%;
+                margin: 5px auto;
+            }
+        }
+
+        /* Large screens (desktops and laptops) */
+        @media (min-width: 1025px) {
+            input[type="text"], input[type="password"], button {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorParam = urlParams.get('error');
+            if (errorParam) {
+                alert("Wrong Credentials");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <span>Vanamala Clinic</span>
+    </div>
+    <div class="content">
+        <h1>Login</h1>
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

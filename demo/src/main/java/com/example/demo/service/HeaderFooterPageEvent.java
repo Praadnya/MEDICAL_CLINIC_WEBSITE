@@ -5,6 +5,8 @@ import com.lowagie.text.pdf.PdfPageEventHelper;
 import com.lowagie.text.pdf.PdfWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class HeaderFooterPageEvent extends PdfPageEventHelper {
 
@@ -14,8 +16,19 @@ public class HeaderFooterPageEvent extends PdfPageEventHelper {
 
     public HeaderFooterPageEvent(String headerImagePath, String footerImagePath) {
         try {
-            this.headerImage = Image.getInstance(headerImagePath);
-            this.footerImage = Image.getInstance(footerImagePath);
+            InputStream headerImageStream = getClass().getClassLoader().getResourceAsStream(headerImagePath);
+            InputStream footerImageStream = getClass().getClassLoader().getResourceAsStream(footerImagePath);
+
+            if (headerImageStream != null && footerImageStream != null) {
+                // Convert InputStream to URL for Image.getInstance()
+                URL headerImageUrl = getClass().getClassLoader().getResource(headerImagePath);
+                URL footerImageUrl = getClass().getClassLoader().getResource(footerImagePath);
+
+                this.headerImage = Image.getInstance(headerImageUrl);
+                this.footerImage = Image.getInstance(footerImageUrl);
+            } else {
+                throw new IOException("Image resources not found.");
+            }
         } catch (BadElementException | IOException e) {
             e.printStackTrace();
         }
@@ -30,14 +43,12 @@ public class HeaderFooterPageEvent extends PdfPageEventHelper {
 
             // Header image centered and a bit larger
             if (headerImage != null) {
-                float headerImageWidth = pageWidth * 0.54f; 
+                float headerImageWidth = pageWidth * 0.54f;
                 headerImageHeight = (headerImageWidth / headerImage.getWidth()) * headerImage.getHeight();
                 headerImage.scaleToFit(headerImageWidth, headerImageHeight);
                 float headerImageX = (pageWidth - headerImageWidth) / 2; // Center horizontally
                 headerImage.setAbsolutePosition(headerImageX, pageHeight - headerImageHeight - 20); // Add some margin from the top
                 writer.getDirectContent().addImage(headerImage);
-                
-                
             }
 
             // Add content after the header image

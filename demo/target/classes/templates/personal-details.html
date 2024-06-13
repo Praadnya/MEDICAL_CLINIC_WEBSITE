@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Patient - Personal Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General styles */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f8ff; /* Light sky blue background */
+            padding: 10px;
+        }
+
+        .navbar {
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0px 2px -2px gray;
+            font-family: 'Merriweather', sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navbar span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+            margin: auto;
+        }
+
+        .navbar .home-button {
+            position: absolute;
+            right: 20px;
+            top: 7px;
+            width: 24px;
+            height: 24px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar .home-button img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .content {
+            margin-top: 80px; /* Adjust to avoid overlap with navbar */
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 15%;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+			margin: 10% 0 0 0;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        fieldset {
+            border: 1px solid rgb(12, 194, 226);
+            border-radius: 4px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px; /* Adjusted width for better layout */
+            background-color: white;
+            box-shadow: 0 0px 2px -2px gray;
+        }
+
+        legend {
+            font-size: 18px;
+            color: rgb(12, 194, 226);
+            padding: 0 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10% 15% 10% 0;
+        }
+
+        .form-group label {
+            width: 30%; /* Adjust label width to align with input fields */
+            font-size: 16px;
+            color: #333;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        .form-group input, .form-group select {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid rgb(12, 194, 226);
+            border-radius: 4px;
+			margin-left: 10%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(10, 160, 200);
+        }
+
+        .home-button:hover img {
+            opacity: 0.8;
+        }
+
+        .submit {
+            margin: 10% 0 0 0;
+        }
+    </style>
+    <script>
+        function capitalizeWords(name) {
+            return name.replace(/\b\w/g, function (char) {
+                return char.toUpperCase();
+            });
+        }
+
+        function formatName() {
+            const nameInput = document.getElementById('name');
+            let name = nameInput.value.trim(); // Trim whitespace from the input
+
+            // Check if the name is all caps
+            if (name === name.toUpperCase()) {
+                // Convert to camel case
+                name = name.toLowerCase().replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+            } else {
+                // Capitalize the first letter of each word
+                name = capitalizeWords(name);
+            }
+
+            nameInput.value = name;
+        }
+
+        function validatePhoneNumber(phoneNumber) {
+            const phonePattern = /^\d{10}$/;
+            return phonePattern.test(phoneNumber);
+        }
+
+        function onSubmitHandler(event) {
+            formatName();
+            const phoneInput = document.getElementById('phone');
+            if (!validatePhoneNumber(phoneInput.value)) {
+                alert('Phone number must be exactly 10 digits.');
+                event.preventDefault();
+            }
+        }
+
+        function allowOnlyNumbers(event) {
+            const charCode = (event.which) ? event.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                event.preventDefault();
+            }
+        }
+
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('dob');
+            dateInput.setAttribute('max', today);
+
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('keypress', allowOnlyNumbers);
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <span>Vanamala Clinic</span>
+        <button class="home-button" onclick="window.location.href='/patients'">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home">
+        </button>
+    </div>
+    <div class="content">
+        <h1>Add New Patient</h1>
+        <form th:action="@{/save-patient}" th:object="${patient}" method="post" onsubmit="onSubmitHandler(event)">
+            <fieldset>
+                <legend>Enter Personal Details</legend>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" th:field="*{name}" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">DOB:</label>
+                    <input type="date" id="dob" th:field="*{dob}" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" th:field="*{gender}" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone No.:</label>
+                    <input type="text" id="phone" th:field="*{phone}" maxlength="10" pattern="\d{10}" required inputmode="numeric">
+                </div>
+            </fieldset>
+            <button type="submit" class="submit">Save Personal Details</button>
+        </form>
+    </div>
+</body>
+</html>

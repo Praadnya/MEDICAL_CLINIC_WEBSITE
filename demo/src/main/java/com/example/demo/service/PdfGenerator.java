@@ -27,8 +27,8 @@ public class PdfGenerator {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         try {
-            String headerImagePath = "src/main/resources/images/header1.png"; // Replace with your header image path
-            String footerImagePath = "src/main/resources/images/footer1.png"; // Replace with your footer image path
+            String headerImagePath = "images/header1.png"; // Replace with your header image path
+            String footerImagePath = "images/footer1.png"; // Replace with your footer image path
 
             PdfWriter writer = PdfWriter.getInstance(document, out);
             HeaderFooterPageEvent event = new HeaderFooterPageEvent(headerImagePath, footerImagePath);
