@@ -1,0 +1,128 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Habits;
+import com.example.demo.model.MedicalInfo;
+import com.example.demo.model.OBH;
+import com.example.demo.model.Objective;
+import com.example.demo.model.PastHistory;
+import com.example.demo.model.Patient;
+import com.example.demo.repository.MedicalInfoRepository;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MedicalInfoService {
+
+    @Autowired
+    private MedicalInfoRepository medicalInfoRepository;
+    
+    @Autowired
+    private PatientService patientService;
+
+    public void saveMedicalInfo(MedicalInfo medicalInfo) {
+        medicalInfoRepository.save(medicalInfo);
+    }
+
+ // Service method to fetch medical information by patient ID
+    public MedicalInfo getMedicalInfoByPatientId(String patientId) {
+        MedicalInfo medicalInfo = medicalInfoRepository.findByPatientId(patientId);
+        if (medicalInfo == null) {
+        	// createDefaultMedicalInfo(patientId);
+        	medicalInfo = createDefaultMedicalInfo(patientId);
+            // Save the default MedicalInfo object to the repository
+            medicalInfoRepository.save(medicalInfo);
+        }
+        return medicalInfo;
+    }
+
+    // Service method to update medical information
+    public void updateMedicalInfo(MedicalInfo medicalInfo) {
+        medicalInfoRepository.save(medicalInfo);
+    }
+    
+    private MedicalInfo createDefaultMedicalInfo(String patientId) {
+        MedicalInfo medicalInfo = new MedicalInfo();
+        // Set the patient ID
+        Patient patient = patientService.getPatientById(patientId);
+        medicalInfo.setPatient(patient);
+        // Set other default values as needed
+        medicalInfo.setAllergies(Collections.singletonList("NKA")); // Assuming "NKA" represents No Known Allergies
+        // Set other fields with default values
+        medicalInfo.setCurrentMedication(new ArrayList<>()); // Empty list
+        
+        PastHistory pastHistory = new PastHistory();
+        pastHistory.setDM(false);
+        pastHistory.setHTN(false);
+        pastHistory.setTHY(false);
+        pastHistory.setDL(false);
+        pastHistory.setIHD(false);
+        pastHistory.setCA(false);
+        pastHistory.setBA(false);
+        pastHistory.setTB(false);
+        pastHistory.setOther("");
+        medicalInfo.setPastHistory(pastHistory);
+        
+        PastHistory familyHistory = new PastHistory();
+        familyHistory.setDM(false);
+        familyHistory.setHTN(false);
+        familyHistory.setTHY(false);
+        familyHistory.setDL(false);
+        familyHistory.setIHD(false);
+        familyHistory.setCA(false);
+        familyHistory.setBA(false);
+        familyHistory.setTB(false);
+        familyHistory.setOther("");
+        medicalInfo.setFamilyHistory(familyHistory);
+        
+        OBH obh = new OBH();
+        obh.setMA(0);
+        obh.setMP("");
+        obh.setMCU(0);
+        obh.setMCB(0);
+        obh.setLMP("");
+        obh.setP(0);
+        obh.setG(0);
+        obh.setA("");
+        obh.setL(0);
+        obh.setChildren(new ArrayList<>()); // Empty list
+        medicalInfo.setObh(obh);
+        
+        Habits habits = new Habits();
+        habits.setAlcohol(false);
+        habits.setAlcoholText("");
+        habits.setSmoking(false);
+        habits.setSmokingText("");
+        habits.setSleep(false);
+        habits.setSleepText("");
+        habits.setBowel(false);
+        habits.setBowelText("");
+        medicalInfo.setHabits(habits);
+        
+        Objective objective = new Objective();
+        objective.setBP("");
+        objective.setSPO2("");
+        objective.setPR(0f);
+        objective.setTEMP(0f);
+        objective.setRBS(0f);
+        objective.setHT(0f);
+        objective.setWT(0f);
+        objective.setBMI(0f);
+        objective.setRS("");
+        objective.setPA("");
+        objective.setCVS("");
+        objective.setENT("");
+        objective.setOTH("");
+        medicalInfo.setObjective(objective);
+        
+        medicalInfo.setReports(new ArrayList<>()); // Empty list
+        
+        return medicalInfo;
+//        return medicalInfo;
+    }
+    
+}
+

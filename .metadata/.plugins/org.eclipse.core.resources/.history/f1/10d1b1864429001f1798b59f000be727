@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient - Medical Info</title>
+    <style>		
+		
+		.table-container {
+				  width: 100%;		  
+				  overflow-x: auto;
+				}
+				
+				table{
+					width: 100%;
+				}
+
+		.navbar {
+		            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+		            color: white;
+		            padding: 15px 0 15px 0;
+		            text-align: center;
+		            font-size: 24px;
+		            position: fixed;
+		            width: 100%;
+		            top: 0;
+		            left: 0;
+		            box-shadow: 0 0px 2px -2px gray;
+					font-family: 'Merriweather', sans-serif;
+		           
+		        }
+		
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 40%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        
+        	
+        
+		button {
+            padding: 7px 12px;
+            font-size: 16px;
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+		}
+		
+        /* Navbar styling */
+        nav {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        
+        /* Hidden class for hiding elements */
+        .hidden {
+            display: none;
+        }
+        
+        /* Responsive styling for smaller screens */
+        @media only screen and (max-width: 768px) {
+            input[type="text"],
+            input[type="number"],
+            input[type="date"] {
+                width: 40%;
+            }
+        }
+	
+		
+		.hidden {
+            display: none;
+        }
+	</style>
+    <script th:inline="javascript">
+        function addAllergyField() {
+            const allergyList = document.getElementById('allergy-list');
+            const inputs = allergyList.getElementsByTagName('input');
+            if (inputs.length === 0 || inputs[inputs.length - 1].value.trim() !== '') {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.name = 'allergies';
+                input.placeholder = 'Allergy';
+                input.required = true;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.type = 'button';
+                deleteButton.innerText = 'Delete';
+                deleteButton.onclick = function() {
+                    deleteAllergyField(input, deleteButton);
+                };
+
+                allergyList.appendChild(input);
+                allergyList.appendChild(deleteButton);
+                allergyList.appendChild(document.createElement('br'));
+            } else {
+                alert('Please fill in the existing allergy field before adding a new one.');
+            }
+        }
+
+        function deleteAllergyField(input, button) {
+            input.parentNode.removeChild(input);
+            button.parentNode.removeChild(button);
+        }
+        
+        function addMedicationRow() {
+            const table = document.getElementById('medicationTable').getElementsByTagName('tbody')[0];
+            const rows = table.getElementsByTagName('tr');
+            const lastRow = rows[rows.length - 1];
+            const inputs = lastRow ? lastRow.getElementsByTagName('input') : [];
+
+            // Check if there are no previous records or if the previous record is not empty
+            const isPreviousEmpty = Array.from(inputs).every(input => input.value.trim() === '');
+
+            if (rows.length === 0 || !isPreviousEmpty) {
+                const newRow = table.insertRow();
+                newRow.innerHTML = `
+                    <td><input type="text" name="currentMedication[${rows.length}].medicineName" required></td>
+                    <td><input type="text" name="currentMedication[${rows.length}].freq" required></td>
+                    <td><button type="button" onclick="deleteMedicationRow(this)">Delete</button></td>
+                `;
+            } else {
+                alert('Please fill in the previous medication details before adding a new record.');
+            }
+        }
+
+        // Function to delete a row from the medication table
+        function deleteMedicationRow(button) {
+            const row = button.parentNode.parentNode;
+            const table = row.parentNode;
+            table.removeChild(row);
+
+            // Renumber the rows after deletion
+            const rows = table.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].getElementsByTagName('input')[0].name = `currentMedication[${i}].medicineName`;
+                rows[i].getElementsByTagName('input')[1].name = `currentMedication[${i}].freq`;
+            }
+        }
+
+		function addNewRecord() {
+	        var tableBody = document.getElementById("childrenTableBody");
+	        var rows = tableBody.getElementsByTagName('tr');
+	        var lastRow = rows[rows.length - 1];
+	        var inputs = lastRow ? lastRow.getElementsByTagName('input') : [];
+	
+	        var isFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+	
+	        if (inputs.length === 0 || isFilled) {
+	            var newRow = tableBody.insertRow();
+	
+	            var genderCell = newRow.insertCell(0);
+	            var ageCell = newRow.insertCell(1);
+	            var ftndLscsCell = newRow.insertCell(2);
+	            var complicationsCell = newRow.insertCell(3);
+	            var actionCell = newRow.insertCell(4);
+	
+	            genderCell.innerHTML = '<input type="text" name="obh.children[' + tableBody.rows.length + '].gender" required>';
+	            ageCell.innerHTML = '<input type="number" name="obh.children[' + tableBody.rows.length + '].age" required>';
+	            ftndLscsCell.innerHTML = '<input type="text" name="obh.children[' + tableBody.rows.length + '].type" required>';
+	            complicationsCell.innerHTML = '<input type="text" name="obh.children[' + tableBody.rows.length + '].complications" required>';
+	            actionCell.innerHTML = '<button type="button" onclick="deleteChildRow(this)">Delete</button>';
+	        } else {
+	            alert('Please fill in the existing children details before adding a new record.');
+	        }
+	    }
+	
+	    function deleteChildRow(button) {
+	        var row = button.parentNode.parentNode;
+	        row.parentNode.removeChild(row);
+	    }   
+	    
+	    function addReportRow() {
+                var table = document.getElementById("reportsTable");
+                var lastRow = table.rows[table.rows.length - 1];
+                var inputs = lastRow.getElementsByTagName("input");        
+                var newRow = table.insertRow();
+                var cells = [];
+                for (var i = 0; i < 28; i++) {
+                    cells.push(newRow.insertCell());
+                }
+
+                cells[0].innerHTML = '<input type="text" name="reports[' + (table.rows.length - 2) + '].date">';
+                cells[1].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].wt" oninput="calculateBMIs()">';
+                cells[2].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].BMI" readonly>';
+                cells[3].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].FBS">';
+                cells[4].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].PPBS">';
+                cells[5].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].A1c">';
+                cells[6].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].SCr">';
+                cells[7].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].UAC">';
+                cells[8].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].TC">';
+                cells[9].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].TGL">';
+                cells[10].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].LDL">';
+                cells[11].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].HDL">';
+                cells[12].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].TSH">';
+                cells[13].innerHTML = '<input type="number" step="0.01" name="reports[' + (table.rows.length - 2) + '].Hb">';
+                cells[14].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].TLC">';
+                cells[15].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].EGFR">';
+                cells[16].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].D3">';
+                cells[17].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].B12">';
+                cells[18].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].AT">';
+                cells[19].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].LT4">';
+                cells[20].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].MET">';
+                cells[21].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].GP">';
+                cells[22].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].DPP4">';
+                cells[23].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].VOG">';
+                cells[24].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].SGLT">';
+                cells[25].innerHTML = '<input type="number" name="reports[' + (table.rows.length - 2) + '].INS">';
+                cells[26].innerHTML = '<input type="text" name="reports[' + (table.rows.length - 2) + '].remarks">';
+                cells[27].innerHTML = '<button type="button" onclick="deleteReportRow(this)">Delete</button>';
+            }
+
+            function deleteReportRow(button) {
+                var row = button.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            }
+	        
+	        function calculateBMI() {
+	            var ht = parseFloat(document.getElementById("HT").value);
+	            var wt = parseFloat(document.getElementById("WT").value);
+	            if (ht > 0 && wt > 0) {
+	                var bmi = (wt / (ht * ht))*10000;
+	                document.getElementById("BMI").value = bmi.toFixed(2);
+	            } else {
+	                document.getElementById("BMI").value = "";
+	            }
+	        }
+	        
+	        function calculateBMIs() {
+			    try {
+			        // Get height from the Objective section
+			        var heightElement = document.getElementById('HT');
+			        if (!heightElement) {
+			            console.error('Height input element not found');
+			            return;
+			        }
+			
+			        var height = heightElement.value;
+			        console.log('Height:', height);
+			
+			        // Ensure height is not empty and is a positive number
+			        if (!height || height <= 0) {
+			            console.error('Invalid height value');
+			            return;
+			        }
+			
+			        // Convert height from cm to meters
+			        height = height / 100;
+			
+			        // Get the reports table
+			        var table = document.getElementById('reportsTable');
+			        if (!table) {
+			            console.error('Reports table not found');
+			            return;
+			        }
+			
+			        var tbody = table.getElementsByTagName('tbody')[0];
+			        if (!tbody) {
+			            console.error('Reports table body not found');
+			            return;
+			        }
+			
+			        // Iterate over each row in the reports table
+			        for (var i = 0; i < tbody.rows.length; i++) {
+			            var row = tbody.rows[i];
+			            console.log('Processing row:', i, row);
+			
+			            var weightCell = row.cells[1];
+			            if (!weightCell) {
+			                console.error('Weight cell not found in row:', i);
+			                continue;
+			            }
+			
+			            var weightInput = weightCell.getElementsByTagName('input')[0];
+			            if (!weightInput) {
+			                console.error('Weight input not found in cell:', weightCell);
+			                continue;
+			            }
+			
+			            var bmiCell = row.cells[2];
+			            if (!bmiCell) {
+			                console.error('BMI cell not found in row:', i);
+			                continue;
+			            }
+			
+			            var bmiInput = bmiCell.getElementsByTagName('input')[0];
+			            if (!bmiInput) {
+			                console.error('BMI input not found in cell:', bmiCell);
+			                continue;
+			            }
+			
+			            // Get weight value from the input field
+			            var weight = weightInput.value;
+			
+			            // Ensure weight is not empty and is a positive number
+			            if (weight && weight > 0) {
+			                // Calculate BMI: weight (kg) / (height (m) * height (m))
+			                var bmi = weight / (height * height);
+			                // Update BMI field
+			                bmiInput.value = bmi.toFixed(2);
+			            } else {
+			                // Clear BMI field if weight is invalid
+			                bmiInput.value = '';
+			            }
+			        }
+			    } catch (error) {
+			        console.error('An error occurred in calculateBMIs:', error);
+			    }
+			}
+    
+     
+
+        function validateForm(event) {
+		    var allergies = document.getElementsByName('allergies');
+		    var childrenRows = document.getElementById('childrenTableBody').getElementsByTagName('tr');
+		
+		    // Validate allergies
+		    for (var i = 0; i < allergies.length; i++) {
+		        if (allergies[i].value.trim() === '') {
+		            alert('Allergy fields cannot be empty.');
+		            event.preventDefault();
+		            return false;
+		        }
+		    }
+		    
+		    //Validate current medication
+			const medicationRows = document.getElementById('medicationTable').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+	    	for (let i = 0; i < medicationRows.length; i++) {
+	        const inputs = medicationRows[i].getElementsByTagName('input');
+	        for (let j = 0; j < inputs.length; j++) {
+	            if (inputs[j].value.trim() === '') {
+	                alert('Medication details cannot have empty fields.');
+	                event.preventDefault();
+	                return false;
+	            	}
+	        	}
+	    	}
+
+		
+		    // Validate children details
+		    for (var i = 0; i < childrenRows.length; i++) {
+		        var inputs = childrenRows[i].getElementsByTagName('input');
+		        for (var j = 0; j < inputs.length; j++) {
+		            if (inputs[j].value.trim() === '') {
+		                alert('Children details cannot have empty fields.');
+		                event.preventDefault();
+		                return false;
+		            }
+		        }
+		    }
+		
+		    return true;
+		    
+		}
+	
+		window.onload = function() {
+	        const today = new Date().toISOString().split('T')[0];
+	        const dateInput = document.getElementById('lmp');
+	        dateInput.setAttribute('max', today);
+	    }
+	    
+	    function toggleTextBox(id) {
+	        var checkbox = document.getElementById(id);
+	        var textBox = document.getElementById(id + "Text");
+	        if (checkbox.checked) {
+	            textBox.classList.remove("hidden");
+	        } else {
+	        	textBox.classList.add("hidden");
+	            textBox.value = ""; // Clear textbox value when unchecked
+	            }
+	        }
+</script>
+</head>
+<body>
+	<div class="navbar">
+	        <span>Vanamala Clinic</span>
+	</div>
+    <h1>Add New Patient - Medical Info</h1>
+    
+    <fieldset>
+        <legend>Personal Details</legend>
+		
+        <p><strong>Name:</strong> <span th:text="${patient.name}"></span></p>
+        <p><strong>Date of Birth:</strong> <span th:text="${patient.dob}"></span></p>
+        <p><strong>Gender:</strong> <span th:text="${patient.gender}"></span></p>
+        <p><strong>Phone Number:</strong> <span th:text="${patient.phone}"></span></p>
+    </fieldset>
+
+    <br>
+
+    <form th:action="@{/save-medical-info}" th:object="${medicalInfo}" method="post" onsubmit="return validateForm(event)">
+		<input type="hidden" name="id" th:value="${patient.id}"/>
+        <fieldset>
+            <legend>Medical Details</legend>
+            
+            <label for="allergies">Allergies:</label>
+            <div id="allergy-list">
+                <input type="text" name="allergies" placeholder="Allergy" required>
+            </div>
+            <button type="button" onclick="addAllergyField()">Add Allergy</button><br><br>
+            
+            <legend>Current Medication</legend>
+            <table id="medicationTable">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Frequency</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically here -->
+                </tbody>
+            </table>
+            <button type="button" onclick="addMedicationRow()">Add Medication</button>
+            
+        </fieldset>
+        <fieldset>
+	        <legend>Past History</legend>
+	        <label><input type="checkbox" th:field="*{pastHistory.DM}"> Diabetes Mellitus</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.HTN}"> Hypertension</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.THY}"> Thyroid Disorder</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.DL}"> Dyslipidemia</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.IHD}"> Ischemic Heart Disease</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.CA}"> Coronary Artery Disease</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.BA}"> BA</label><br>
+	        <label><input type="checkbox" th:field="*{pastHistory.TB}"> TB</label><br>
+	        <label>Other: <input type="text" th:field="*{pastHistory.other}"></label><br>
+    	</fieldset>
+    	<fieldset>
+	        <legend>Family History</legend>
+	        <label><input type="checkbox" th:field="*{familyHistory.DM}"> Diabetes Mellitus</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.HTN}"> Hypertension</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.THY}"> Thyroid Disorder</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.DL}"> Dyslipidemia</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.IHD}"> Ischemic Heart Disease</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.CA}"> Coronary Artery Disease</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.BA}"> BA</label><br>
+	        <label><input type="checkbox" th:field="*{familyHistory.TB}"> TB</label><br>
+	        <label>Other: <input type="text" th:field="*{familyHistory.other}"></label><br>
+    	</fieldset>
+    	<!-- Habits Section -->
+	        <fieldset>
+	            <legend>Habits</legend>
+	            <label for="alcohol">Alcohol:</label>
+	            <input type="checkbox" id="alcohol" name="habits.alcohol" onclick="toggleTextBox('alcohol')">
+	            <input type="text" id="alcoholText" name="habits.alcoholText" class="hidden"><br><br>
+	
+	            <label for="smoking">Smoking:</label>
+	            <input type="checkbox" id="smoking" name="habits.smoking" onclick="toggleTextBox('smoking')">
+	            <input type="text" id="smokingText" name="habits.smokingText" class="hidden"><br><br>
+	
+	            <label for="sleep">Sleep:</label>
+	            <input type="checkbox" id="sleep" name="habits.sleep" onclick="toggleTextBox('sleep')">
+	            <input type="text" id="sleepText" name="habits.sleepText" class="hidden"><br><br>
+	
+	            <label for="bowel">Bowel:</label>
+	            <input type="checkbox" id="bowel" name="habits.bowel" onclick="toggleTextBox('bowel')">
+	            <input type="text" id="bowelText" name="habits.bowelText" class="hidden"><br><br>
+	        </fieldset>
+	        <br>
+    	<!-- OB History Section -->
+		<div th:if="${patient.gender == 'Female'}">
+		    <fieldset>
+		        <legend>OB History</legend>
+		        <label>MA: <input type="number" th:field="*{obh.MA}"></label><br>
+		        <label>MP: <input type="text" th:field="*{obh.MP}"></label><br>
+		        <label>MCU: <input type="number" th:field="*{obh.MCU}"></label><br>
+		        <label>MCB: <input type="number" th:field="*{obh.MCB}"></label><br>
+		        <label>LMP: <input type="date" id="lmp" th:field="*{obh.LMP}"></label><br>
+		        <label>P: <input type="number" min="0" max="6" th:field="*{obh.P}"></label><br>
+		        <label>G: <input type="number" min="0" max="6" th:field="*{obh.G}"></label><br>
+		        <label>A: <input type="text" th:field="*{obh.A}"></label><br>
+		        <label>L: <input type="number" min="0" max="10" th:field="*{obh.L}"></label><br>
+		        
+		        <h3>Children Information</h3>
+		        <!-- Children Table -->
+		        <table>
+		            <tr>
+		                <th>Gender</th>
+		                <th>Age</th>
+		                <th>Type(FTND/LSCS)</th>
+		                <th>Complications</th>
+		                <th>Action</th>
+		            </tr>
+		            <tbody id="childrenTableBody">
+		                <!-- Rows will be added dynamically here -->
+		            </tbody>
+		        </table>
+		        
+		        <!-- Add New Record Button -->
+		        <button type="button" onclick="addNewRecord()">Add New Record</button>
+		    </fieldset>
+		</div>
+		
+		<!-- Objective -->
+	        <fieldset>
+	            <legend>Objective</legend>
+	            <label for="BP">BP:</label>
+	            <input type="text" id="BP" name="objective.BP"><br><br>
+	            
+	            <label for="SPO2">SPO2:</label>
+	            <input type="number" id="SPO2" name="objective.SPO2"><br><br>
+	            
+	            <label for="PR">PR:</label>
+	            <input type="number" step="0.01" id="PR" name="objective.PR"><br><br>
+	            
+	            <label for="TEMP">TEMP:</label>
+	            <input type="number" step="0.01" id="TEMP" name="objective.TEMP"><br><br>
+	            
+	            <label for="RBS">RBS:</label>
+	            <input type="number" step="0.01" id="RBS" name="objective.RBS"><br><br>
+	            
+	            <label for="HT">HT:</label>
+	            <input type="number" step="0.01" id="HT" name="objective.HT" oninput="calculateBMI()"><br><br>
+	            
+	            <label for="WT">WT:</label>
+	            <input type="number" step="0.01" id="WT" name="objective.WT" oninput="calculateBMI()"><br><br>
+	            
+	            <label for="BMI">BMI:</label>
+	            <input type="text" id="BMI" name="objective.BMI" readonly><br><br>
+	            
+	            <label for="RS">RS:</label>
+	            <input type="text" id="RS" name="objective.RS"><br><br>
+	            
+	            <label for="PA">PA:</label>
+	            <input type="text" id="PA" name="objective.PA"><br><br>
+	            
+	            <label for="CVS">CVS:</label>
+	            <input type="text" id="CVS" name="objective.CVS"><br><br>
+	            
+	            <label for="ENT">ENT:</label>
+	            <input type="text" id="ENT" name="objective.ENT"><br><br>
+	            
+	            <label for="OTH">OTH:</label>
+	            <input type="text" id="OTH" name="objective.OTH"><br><br>
+	        </fieldset>
+	        <br>
+	        
+			<div class = "table-container">
+						                <table id="reportsTable">
+						                    <tr>
+						                        <th>Date</th>
+						                        <th>Wt</th>
+						                        <th>BMI</th>
+						                        <th>FBS</th>
+						                        <th>PPBS</th>
+						                        <th>A1c</th>
+						                        <th>SCr</th>
+						                        <th>UAC</th>
+						                        <th>TC</th>
+						                        <th>TGL</th>
+						                        <th>LDL</th>
+						                        <th>HDL</th>
+						                        <th>TSH</th>
+						                        <th>Hb</th>
+						                        <th>TLC</th>
+						                        <th>EGFR</th>
+						                        <th>D3</th>
+						                        <th>B12</th>
+						                        <th>AT</th>
+						                        <th>LT4</th>
+						                        <th>MET</th>
+						                        <th>GP</th>
+						                        <th>DPP4</th>
+						                        <th>VOG</th>
+						                        <th>SGLT</th>
+						                        <th>INS</th>
+						                        <th>Remarks</th>
+						                        <th>Action</th>
+						                    </tr>
+						                </table>
+						                
+						            </div>
+									<button type="button" onclick="addReportRow()">Add New Record</button>
+						            <br>
+					    	
+        <button type="submit">Save Medical Details</button>
+    </form>
+</body>
+</html>

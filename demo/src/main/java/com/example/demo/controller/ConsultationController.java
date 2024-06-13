@@ -1,0 +1,93 @@
+package com.example.demo.controller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.model.Consultation;
+import com.example.demo.model.MedicalInfo;
+import com.example.demo.model.Medication;
+import com.example.demo.model.Patient;
+import com.example.demo.repository.ConsultationRepository;
+import com.example.demo.service.ConsultationService;
+import com.example.demo.service.MedicalInfoService;
+import com.example.demo.service.PatientService;
+
+@Controller
+public class ConsultationController {
+
+    @Autowired
+    private PatientService patientService;
+    @Autowired
+    private MedicalInfoService medicalInfoService;
+    @Autowired
+    private ConsultationService consultationService;
+	
+	@Autowired
+    private ConsultationRepository consultationRepository;
+    private Consultation savedConsultation;
+
+	
+	@GetMapping("/consultation")
+    public String showConsultationForm(@RequestParam String id, Model model) {
+        Patient patient = patientService.getPatientById(id);
+        model.addAttribute("consultation", new Consultation());
+        model.addAttribute("patient",patient);
+        return "consultation"; // Assuming "consultation" is the Thymeleaf template for consultation form
+    }
+
+
+    @PostMapping("/save-consultation")
+    public String saveConsultation(@RequestParam("PatientId") String patientId, @ModelAttribute Consultation consultation) {
+        // Fetch the patient using the provided ID
+        Patient patient = patientService.getPatientById(patientId);
+        
+        // Set the patient reference in the consultation object
+        consultation.setPatient(patient);
+        consultation.setDateOfVisit(new Date());
+        consultation.setMode(consultation.getMode());
+        consultation.setReviewDate(consultation.getReviewDate());
+        
+        // Handle the list of Medication objects if it's not null
+        if (consultation.getTreatment() != null) {
+            List<Medication> treatment = new ArrayList<>();
+            for (Medication medication : consultation.getTreatment()) {
+                if (medication != null) {
+                    Medication newMedication = new Medication();
+                    newMedication.setMedicineName(medication.getMedicineName());
+                    newMedication.setFrequency(medication.getFrequency());
+                    newMedication.setNumberOfDays(medication.getNumberOfDays());
+                    newMedication.setSpecialInstructions(medication.getSpecialInstructions());
+                    treatment.add(newMedication);
+                }
+            }
+            consultation.setTreatment(treatment);
+        }
+        
+        
+        // Save the consultation object along with the patient reference
+        savedConsultation = consultationRepository.save(consultation);
+        
+        return "redirect:/prescription/"+savedConsultation.getId();
+    }
+    
+    @GetMapping("/consultation-details/{id}")
+    public String viewConsultationDetails(@PathVariable String id, Model model) {
+        Consultation consultation = consultationService.getConsultationById(id);
+        MedicalInfo medicalInfo = medicalInfoService.getMedicalInfoByPatientId(consultation.getPatient().getId());
+        model.addAttribute("consultation", consultation);
+        model.addAttribute("Id", consultation.getId());
+        model.addAttribute("medicalInfo",medicalInfo);
+        return "consultation_details"; // Thymeleaf template to display consultation details
+    }
+
+}

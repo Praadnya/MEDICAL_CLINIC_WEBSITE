@@ -1,0 +1,558 @@
+package com.example.demo.controller;
+
+import com.example.demo.model.CMed;
+import com.example.demo.model.Child;
+import com.example.demo.model.Consultation;
+import com.example.demo.model.Habits;
+import com.example.demo.model.MedicalInfo;
+import com.example.demo.model.Medication;
+import com.example.demo.model.OBH;
+import com.example.demo.model.Objective;
+import com.example.demo.model.PastHistory;
+import com.example.demo.model.Patient;
+import com.example.demo.model.Reports;
+import com.example.demo.repository.ConsultationRepository;
+import com.example.demo.repository.MedicalInfoRepository;
+import com.example.demo.repository.PatientRepository;
+import com.example.demo.service.ConsultationService;
+import com.example.demo.service.MedicalInfoService;
+import com.example.demo.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@Controller
+public class PatientController {
+	
+	@Autowired
+    private PatientRepository patientRepository;
+	@Autowired
+    private MedicalInfoRepository medicalInfoRepository;
+	@Autowired
+    private ConsultationRepository consultationRepository;
+
+    @Autowired
+    private PatientService patientService;
+    @Autowired
+    private MedicalInfoService medicalInfoService;
+    @Autowired
+    private ConsultationService consultationService;
+    
+    private Patient savedPatient;  // Temporary storage for the patient
+    private Consultation savedConsultation;
+
+    @GetMapping("/patients")
+    public String listPatients(Model model, @RequestParam(value = "keyword", required = false) String keyword) {
+        List<Patient> patients = (keyword == null || keyword.isEmpty()) ? 
+                patientService.getAllPatients() : 
+                patientService.searchPatients(keyword);
+        
+        List<String> patientIds = patients.stream().map(Patient::getId).collect(Collectors.toList());
+        
+        model.addAttribute("patients", patients);
+        model.addAttribute("patientIds", patientIds); // Adding patient IDs to the model
+        
+        model.addAttribute("keyword", keyword);
+        return "patients";
+    }
+    
+        @GetMapping("/patient/{id}")
+        public String viewPatientDetails(@PathVariable String id, Model model) {
+            Patient patient = patientService.getPatientById(id);
+            MedicalInfo medicalInfo = medicalInfoService.getMedicalInfoByPatientId(id);
+            if (medicalInfo == null) {
+                return "redirect:/add-medical-info/"+ id; // Redirect to the medical_info page if medicalInfo is null
+            }
+         // Fetch previous consultations sorted by date of visit
+            List<Consultation> previousConsultations = consultationService.getAllConsultationsByPatientId(id);
+            previousConsultations.sort(Comparator.comparing(Consultation::getDateOfVisit).reversed());
+            
+            Date mostRecentDateOfVisit = null;
+            if (!previousConsultations.isEmpty()) {
+                // Get the most recent consultation's dateOfVisit
+                mostRecentDateOfVisit = previousConsultations.get(0).getDateOfVisit();
+            }
+           
+            
+            model.addAttribute("patient", patient);
+            model.addAttribute("medicalInfo", medicalInfo);
+            model.addAttribute("previousConsultations", previousConsultations);
+            model.addAttribute("mostRecentDateOfVisit", mostRecentDateOfVisit); // Add mostRecentDateOfVisit to the model
+
+            
+            return "view_patient_details";
+        }
+
+        @PostMapping("/patient/{id}")
+        public String updatePatientDetails(@PathVariable String id,
+                                           @ModelAttribute Patient updatedPatient,
+                                           @ModelAttribute MedicalInfo updatedMedicalInfo,
+                                           @ModelAttribute Consultation updatedConsultation,
+                                           @RequestParam(value = "allergies", required = false) List<String> allergies,
+                                           @RequestParam(value = "medicationNames", required = false) List<String> medicationNames,
+                                           @RequestParam(value = "medicationFrequencies", required = false) List<String> medicationFrequencies,
+                                           @RequestParam(value = "childGender", required = false) List<String> childGenders,
+                                           @RequestParam(value = "childAge", required = false) List<Integer> childAges,
+                                           @RequestParam(value = "childFTNDLSCS", required = false) List<String> childFtndLscs,
+                                           @RequestParam(value = "childComplications", required = false) List<String> childComplications,
+                                           @RequestParam(value = "habits", required = false) Map<String, String> habits,
+                                           @RequestParam(value = "objective", required = false) Map<String, String> objective,
+                                           @RequestParam(value = "Date", required = false) List<String> reportDates,
+                                           @RequestParam(value = "Wt", required = false) List<Float> reportWt,
+                                           @RequestParam(value = "BMI", required = false) List<Float> reportBmi,
+                                           @RequestParam(value = "FBS", required = false) List<Float> reportFbs,
+                                           @RequestParam(value = "PPBS", required = false) List<Float> reportPpbs,
+                                           @RequestParam(value = "A1c", required = false) List<Float> reportA1c,
+                                           @RequestParam(value = "SCr", required = false) List<Float> reportSCr,
+                                           @RequestParam(value = "UAC", required = false) List<Float> reportUac,
+                                           @RequestParam(value = "TC", required = false) List<Float> reportTc,
+                                           @RequestParam(value = "TGL", required = false) List<Float> reportTgl,
+                                           @RequestParam(value = "LDL", required = false) List<Float> reportLdl,
+                                           @RequestParam(value = "HDL", required = false) List<Float> reportHdl,
+                                           @RequestParam(value = "TSH", required = false) List<Float> reportTsh,
+                                           @RequestParam(value = "Hb", required = false) List<Float> reportHb,
+                                           @RequestParam(value = "TLC", required = false) List<Integer> reportTlc,
+                                           @RequestParam(value = "EGFR", required = false) List<Integer> reportEgfr,
+                                           @RequestParam(value = "D3", required = false) List<Integer> reportD3,
+                                           @RequestParam(value = "B12", required = false) List<Integer> reportB12,
+                                           @RequestParam(value = "AT", required = false) List<Integer> reportAt,
+                                           @RequestParam(value = "LT4", required = false) List<Integer> reportLt4,
+                                           @RequestParam(value = "MET", required = false) List<Integer> reportMet,
+                                           @RequestParam(value = "GP", required = false) List<Integer> reportGp,
+                                           @RequestParam(value = "DPP4", required = false) List<Integer> reportDpp4,
+                                           @RequestParam(value = "VOG", required = false) List<Integer> reportVog,
+                                           @RequestParam(value = "SGLT", required = false) List<Integer> reportSglt,
+                                           @RequestParam(value = "INS", required = false) List<Integer> reportIns,
+                                           @RequestParam(value = "Remarks", required = false) List<String> reportRemarks) {
+            // Update patient details
+            patientService.updatePatient(id, updatedPatient);
+
+            // Update medical information
+            MedicalInfo medicalInfo = medicalInfoService.getMedicalInfoByPatientId(id);
+            if (allergies != null) {
+                medicalInfo.setAllergies(allergies);
+            }
+
+            if (medicationNames != null && medicationFrequencies != null) {
+                List<CMed> currentMedications = new ArrayList<>();
+                for (int i = 0; i < medicationNames.size(); i++) {
+                    CMed medication = new CMed();
+                    medication.setMedicineName(medicationNames.get(i));
+                    medication.setFreq(medicationFrequencies.get(i));
+                    currentMedications.add(medication);
+                }
+                medicalInfo.setCurrentMedication(currentMedications);
+            }
+
+            // Update past history
+            medicalInfo.setPastHistory(updatedMedicalInfo.getPastHistory());
+
+            // Update family history
+            medicalInfo.setFamilyHistory(updatedMedicalInfo.getFamilyHistory());
+
+            // Update OB History
+            OBH obh = updatedMedicalInfo.getObh();
+            if (childGenders != null && childAges != null && childFtndLscs != null && childComplications != null) {
+                List<Child> children = new ArrayList<>();
+                for (int i = 0; i < childGenders.size(); i++) {
+                    Child child = new Child();
+                    child.setGender(childGenders.get(i));
+                    child.setAge(childAges.get(i));
+                    child.setType(childFtndLscs.get(i));
+                    child.setComplications(childComplications.get(i));
+                    children.add(child);
+                }
+                obh.setChildren(children);
+            }
+            medicalInfo.setObh(obh);
+
+            medicalInfo.setHabits(updatedMedicalInfo.getHabits());
+            medicalInfo.setObjective(updatedMedicalInfo.getObjective());
+            
+         // Update Reports
+            List<Reports> reports = new ArrayList<>();
+            if (reportDates != null) {
+                for (int i = 0; i < reportDates.size(); i++) {
+                    Reports report = new Reports();
+                    report.setDate(reportDates.get(i));
+                    if (reportWt != null && reportWt.size() > i) {
+                        report.setWt(reportWt.get(i));
+                    }
+                    if (reportBmi != null && reportBmi.size() > i) {
+                        report.setBMI(reportBmi.get(i));
+                    }
+                    if (reportFbs != null && reportFbs.size() > i) {
+                        report.setFBS(reportFbs.get(i));
+                    }
+                    if (reportPpbs != null && reportPpbs.size() > i) {
+                        report.setPPBS(reportPpbs.get(i));
+                    }
+                    if (reportA1c != null && reportA1c.size() > i) {
+                        report.setA1c(reportA1c.get(i));
+                    }
+                    if (reportSCr != null && reportSCr.size() > i) {
+                        report.setSCr(reportSCr.get(i));
+                    }
+                    if (reportUac != null && reportUac.size() > i) {
+                        report.setUAC(reportUac.get(i));
+                    }
+                    if (reportTc != null && reportTc.size() > i) {
+                        report.setTC(reportTc.get(i));
+                    }
+                    if (reportTgl != null && reportTgl.size() > i) {
+                        report.setTGL(reportTgl.get(i));
+                    }
+                    if (reportLdl != null && reportLdl.size() > i) {
+                        report.setLDL(reportLdl.get(i));
+                    }
+                    if (reportHdl != null && reportHdl.size() > i) {
+                        report.setHDL(reportHdl.get(i));
+                    }
+                    if (reportTsh != null && reportTsh.size() > i) {
+                        report.setTSH(reportTsh.get(i));
+                    }
+                    if (reportHb != null && reportHb.size() > i) {
+                        report.setHb(reportHb.get(i));
+                    }
+                    if (reportTlc != null && reportTlc.size() > i) {
+                        report.setTLC(reportTlc.get(i));
+                    }
+                    if (reportEgfr != null && reportEgfr.size() > i) {
+                        report.setEGFR(reportEgfr.get(i));
+                    }
+                    if (reportD3 != null && reportD3.size() > i) {
+                        report.setD3(reportD3.get(i));
+                    }
+                    if (reportB12 != null && reportB12.size() > i) {
+                        report.setB12(reportB12.get(i));
+                    }
+                    if (reportAt != null && reportAt.size() > i) {
+                        report.setAT(reportAt.get(i));
+                    }
+                    if (reportLt4 != null && reportLt4.size() > i) {
+                        report.setLT4(reportLt4.get(i));
+                    }
+                    if (reportMet != null && reportMet.size() > i) {
+                        report.setMET(reportMet.get(i));
+                    }
+                    if (reportGp != null && reportGp.size() > i) {
+                        report.setGP(reportGp.get(i));
+                    }
+                    if (reportDpp4 != null && reportDpp4.size() > i) {
+                        report.setDPP4(reportDpp4.get(i));
+                    }
+                    if (reportVog != null && reportVog.size() > i) {
+                        report.setVOG(reportVog.get(i));
+                    }
+                    if (reportSglt != null && reportSglt.size() > i) {
+                        report.setSGLT(reportSglt.get(i));
+                    }
+                    if (reportIns != null && reportIns.size() > i) {
+                        report.setINS(reportIns.get(i));
+                    }
+                    if (reportRemarks != null && reportRemarks.size() > i) {
+                        report.setRemarks(reportRemarks.get(i));
+                    }
+                    reports.add(report);
+                }
+            }
+            medicalInfo.setReports(reports);
+
+            
+
+            medicalInfoService.updateMedicalInfo(medicalInfo);
+
+            // Consultation consultation = consultationService.getLatestConsultationByPatientId(id);
+
+            // consultationService.saveConsultation(consultation);
+
+            return "redirect:/patient/" + id;
+        }
+    
+
+
+    @GetMapping("/add-patient")
+    public String showPersonalDetailsForm(Model model) {
+        model.addAttribute("patient", new Patient());
+        return "personal-details";
+    }
+
+    @PostMapping("/save-patient")
+    public String savePatient(@ModelAttribute Patient patient) {
+        savedPatient = patientRepository.save(patient);  // Save the patient and store it
+        return "redirect:/add-medical-info/"+ savedPatient.getId();  // Redirect to the medical info form
+    }
+    
+    @GetMapping("/add-medical-info/{Id}")
+    public String showMedicalInfoForm(@PathVariable String Id, Model model) {
+    	Patient patient = patientService.getPatientById(Id);
+        model.addAttribute("patient", patient);  // Add saved patient to model
+        model.addAttribute("medicalInfo", new MedicalInfo());
+        return "medical-info";
+    }
+
+    @PostMapping("/save-medical-info")
+    public String saveMedicalInfo(@RequestParam("PatientId") String patientId, @ModelAttribute MedicalInfo medicalInfo) {
+    	Patient patient = patientService.getPatientById(patientId);
+        // Set the patient reference in the medicalInfo object
+        medicalInfo.setPatient(patient);        
+        // Create a new PastHistory object based on the selected checkboxes and input value
+        PastHistory pastHistory = new PastHistory();
+        pastHistory.setDM(medicalInfo.getPastHistory().isDM());
+        pastHistory.setHTN(medicalInfo.getPastHistory().isHTN());
+        pastHistory.setTHY(medicalInfo.getPastHistory().isTHY());
+        pastHistory.setDL(medicalInfo.getPastHistory().isDL());
+        pastHistory.setIHD(medicalInfo.getPastHistory().isIHD());
+        pastHistory.setCA(medicalInfo.getPastHistory().isCA());
+        pastHistory.setBA(medicalInfo.getPastHistory().isBA());
+        pastHistory.setTB(medicalInfo.getPastHistory().isTB());
+        pastHistory.setOther(medicalInfo.getPastHistory().getOther());
+
+        // Set the updated PastHistory object in the medicalInfo
+        medicalInfo.setPastHistory(pastHistory);
+        
+     // Create a new PastHistory object based on the selected checkboxes and input value
+        PastHistory familyHistory = new PastHistory();
+        familyHistory.setDM(medicalInfo.getPastHistory().isDM());
+        familyHistory.setHTN(medicalInfo.getPastHistory().isHTN());
+        familyHistory.setTHY(medicalInfo.getPastHistory().isTHY());
+        familyHistory.setDL(medicalInfo.getPastHistory().isDL());
+        familyHistory.setIHD(medicalInfo.getPastHistory().isIHD());
+        familyHistory.setCA(medicalInfo.getPastHistory().isCA());
+        familyHistory.setBA(medicalInfo.getPastHistory().isBA());
+        familyHistory.setTB(medicalInfo.getPastHistory().isTB());
+        familyHistory.setOther(medicalInfo.getPastHistory().getOther());
+
+        // Set the updated PastHistory object in the medicalInfo
+        medicalInfo.setPastHistory(familyHistory);
+
+        // Check if the patient is female
+        if ("Female".equals(patient.getGender())) {
+            // Create a new OBH object based on the input values
+            OBH obh = new OBH();
+            
+            obh.setMA(medicalInfo.getObh().getMA());
+            obh.setMP(medicalInfo.getObh().getMP());
+            obh.setMCU(medicalInfo.getObh().getMCU());
+            obh.setMCB(medicalInfo.getObh().getMCB());
+            obh.setLMP(medicalInfo.getObh().getLMP());
+            obh.setP(medicalInfo.getObh().getP());
+            obh.setG(medicalInfo.getObh().getG());
+            obh.setA(medicalInfo.getObh().getA());
+            obh.setL(medicalInfo.getObh().getL());
+
+            // Initialize children list if null
+            List<Child> children = medicalInfo.getObh().getChildren();
+            if (children == null) {
+                children = new ArrayList<>();
+            }
+
+            // Create a new list to store Child objects
+            List<Child> newChildren = new ArrayList<>();
+
+            // Iterate over the list of children provided in the form
+            for (Child child : children) {
+                // Create a new Child object based on the input values
+                Child newChild = new Child();
+                newChild.setGender(child.getGender());
+                newChild.setAge(child.getAge());
+                newChild.setType(child.getType());
+                newChild.setComplications(child.getComplications());
+
+                // Add the new Child object to the list
+                newChildren.add(newChild);
+            }
+
+            // Set the list of Child objects in the OBH object
+            obh.setChildren(newChildren);
+
+            // Set the updated OBH object in the medicalInfo
+            medicalInfo.setObh(obh);
+        } else {
+            // If the patient is not female, set the OBH object to null
+            medicalInfo.setObh(null);
+        }
+        
+     // Set the filled History details if the History object is not null
+        if (medicalInfo.getHabits() != null) {
+            Habits habits = new Habits();
+            habits.setAlcohol(medicalInfo.getHabits().getAlcohol());
+            habits.setAlcoholText(medicalInfo.getHabits().getAlcoholText());
+            habits.setSmoking(medicalInfo.getHabits().getSmoking());
+            habits.setSmokingText(medicalInfo.getHabits().getSmokingText());
+            habits.setSleep(medicalInfo.getHabits().getSleep());
+            habits.setSleepText(medicalInfo.getHabits().getSleepText());
+            habits.setBowel(medicalInfo.getHabits().getBowel());
+            habits.setBowelText(medicalInfo.getHabits().getBowelText());
+            medicalInfo.setHabits(habits);
+        }
+
+     // Set the filled Objective details if the Objective object is not null
+        if (medicalInfo.getObjective() != null) {
+            Objective objective = new Objective();
+            objective.setBP(medicalInfo.getObjective().getBP());
+            objective.setSPO2(medicalInfo.getObjective().getSPO2());
+            objective.setPR(medicalInfo.getObjective().getPR());
+            objective.setTEMP(medicalInfo.getObjective().getTEMP());
+            objective.setRBS(medicalInfo.getObjective().getRBS());
+            objective.setHT(medicalInfo.getObjective().getHT());
+            objective.setWT(medicalInfo.getObjective().getWT());
+            objective.setBMI(medicalInfo.getObjective().getBMI());
+            objective.setRS(medicalInfo.getObjective().getRS());
+            objective.setPA(medicalInfo.getObjective().getPA());
+            objective.setCVS(medicalInfo.getObjective().getCVS());
+            objective.setENT(medicalInfo.getObjective().getENT());
+            objective.setOTH(medicalInfo.getObjective().getOTH());
+            medicalInfo.setObjective(objective);
+        }
+
+        
+     // Handle the reports section if it's not null
+        if (medicalInfo.getReports() != null) {
+            List<Reports> reports = new ArrayList<>();
+            for (Reports report : medicalInfo.getReports()) {
+                if (report != null) {
+                    Reports newReport = new Reports();
+                    newReport.setDate(report.getDate());
+                    newReport.setWt(report.getWt());
+                    newReport.setBMI(report.getBMI());
+                    newReport.setFBS(report.getFBS());
+                    newReport.setPPBS(report.getPPBS());
+                    newReport.setA1c(report.getA1c());
+                    newReport.setSCr(report.getSCr());
+                    newReport.setUAC(report.getUAC());
+                    newReport.setTC(report.getTC());
+                    newReport.setTGL(report.getTGL());
+                    newReport.setLDL(report.getLDL());
+                    newReport.setHDL(report.getHDL());
+                    newReport.setTSH(report.getTSH());
+                    newReport.setHb(report.getHb());
+                    newReport.setTLC(report.getTLC());
+                    newReport.setEGFR(report.getEGFR());
+                    newReport.setD3(report.getD3());
+                    newReport.setB12(report.getB12());
+                    newReport.setAT(report.getAT());
+                    newReport.setLT4(report.getLT4());
+                    newReport.setMET(report.getMET());
+                    newReport.setGP(report.getGP());
+                    newReport.setDPP4(report.getDPP4());
+                    newReport.setVOG(report.getVOG());
+                    newReport.setSGLT(report.getSGLT());
+                    newReport.setINS(report.getINS());
+                    newReport.setRemarks(report.getRemarks());
+                    reports.add(newReport);
+                }
+            }
+            medicalInfo.setReports(reports);
+        }
+
+
+        // Save the medicalInfo object
+        medicalInfoRepository.save(medicalInfo);
+
+        return "redirect:/patient/" + patient.getId();  // Redirect back to the personal details form for a new entry
+    }
+        
+
+    
+    @GetMapping("/consultation")
+    public String showConsultationForm(@RequestParam String id, Model model) {
+        Patient patient = patientService.getPatientById(id);
+        model.addAttribute("consultation", new Consultation());
+        model.addAttribute("patient",patient);
+        return "consultation"; // Assuming "consultation" is the Thymeleaf template for consultation form
+    }
+
+
+    @PostMapping("/save-consultation")
+    public String saveConsultation(@RequestParam("id") String patientId, @ModelAttribute Consultation consultation) {
+        // Fetch the patient using the provided ID
+        Patient patient = patientService.getPatientById(patientId);
+        
+        // Set the patient reference in the consultation object
+        consultation.setPatient(patient);
+        consultation.setDateOfVisit(new Date());
+        consultation.setMode(consultation.getMode());
+        consultation.setReviewDate(consultation.getReviewDate());
+        
+        // Handle the list of Medication objects if it's not null
+        if (consultation.getTreatment() != null) {
+            List<Medication> treatment = new ArrayList<>();
+            for (Medication medication : consultation.getTreatment()) {
+                if (medication != null) {
+                    Medication newMedication = new Medication();
+                    newMedication.setMedicineName(medication.getMedicineName());
+                    newMedication.setFrequency(medication.getFrequency());
+                    newMedication.setNumberOfDays(medication.getNumberOfDays());
+                    newMedication.setSpecialInstructions(medication.getSpecialInstructions());
+                    treatment.add(newMedication);
+                }
+            }
+            consultation.setTreatment(treatment);
+        }
+        
+        
+        // Save the consultation object along with the patient reference
+        savedConsultation = consultationRepository.save(consultation);
+        
+        return "redirect:/prescription/"+savedConsultation.getId();
+    }
+
+    
+    
+    @GetMapping("/prescription/{id}")
+    public String showPrescription(@PathVariable String id ,Model model) {
+        // Fetch the necessary data from saved objects
+        Consultation consultation = consultationService.getConsultationById(id);
+        Patient patient = consultation.getPatient();
+        MedicalInfo medicalInfo = medicalInfoService.getMedicalInfoByPatientId(patient.getId());
+
+        // Add data to the model
+        model.addAttribute("patient", patient);
+        model.addAttribute("Id", consultation.getId());
+        model.addAttribute("dateOfVisit", consultation.getDateOfVisit());
+        model.addAttribute("mode", consultation.getMode());
+        model.addAttribute("currentComplaints", consultation.getCurrentComplaints());
+        model.addAttribute("diagnosis", consultation.getDiagnosis());
+        model.addAttribute("treatment", consultation.getTreatment());
+        model.addAttribute("investigations", consultation.getInvestigations());
+        model.addAttribute("dietAdvice", consultation.getDietAdvice());
+        model.addAttribute("exerciseAdvice", consultation.getExerciseAdvice());
+        model.addAttribute("specialAdvice", consultation.getSpecialAdvice());
+        model.addAttribute("reviewDate", consultation.getReviewDate());
+
+        // Check if the patient has any allergies and mark in red if not NKA
+        List<String> allergies = medicalInfo.getAllergies();
+        boolean isNKA = allergies != null && allergies.contains("NKA");
+        model.addAttribute("allergies", allergies);
+        model.addAttribute("isNKA", isNKA);
+
+        // Return the Thymeleaf template for prescription
+        return "prescription";
+    }
+    
+    @GetMapping("/consultation-details/{id}")
+    public String viewConsultationDetails(@PathVariable String id, Model model) {
+        Consultation consultation = consultationService.getConsultationById(id);
+        MedicalInfo medicalInfo = medicalInfoService.getMedicalInfoByPatientId(consultation.getPatient().getId());
+        model.addAttribute("consultation", consultation);
+        model.addAttribute("Id", consultation.getId());
+        model.addAttribute("medicalInfo",medicalInfo);
+        return "consultation_details"; // Thymeleaf template to display consultation details
+    }
+
+
+    
+
+}

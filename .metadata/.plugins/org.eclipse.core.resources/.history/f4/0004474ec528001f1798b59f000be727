@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patient Details</title>
+    <style>
+        fieldset {
+            margin: 2% 0;
+        }
+
+        .navbar {
+            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0px 2px -2px gray;
+            font-family: 'Merriweather', sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .goo {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #f0f0f0; /* Light background color */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none !important; /* Remove underline */
+            color: black; /* Inherit text color */
+        }
+
+        .toggle-content {
+            display: none;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>Vanamala Clinic</span>
+    </div>
+    <div class="content" style="margin-top: 80px;">
+        <h2>Patient Details</h2>
+
+        <div>
+            <h3>
+                Patient Information
+                <button class="toggle-btn" onclick="toggleContent('patient-info')">▼</button>
+            </h3>
+            <div id="patient-info" class="toggle-content">
+                <!-- Patient information fields -->
+                <p>Patient Name: <span th:text="${patient.name}">John Doe</span></p>
+                <p>Patient ID: <span th:text="${patient.id}">12345</span></p>
+                <p>Date of Birth: <span th:text="${patient.dob}">01/01/1980</span></p>
+            </div>
+        </div>
+
+        <div>
+            <h3>
+                Previous Consultations
+                <button class="toggle-btn" onclick="toggleContent('previous-consultations')">▼</button>
+            </h3>
+            <div id="previous-consultations" class="toggle-content">
+                <!-- Iterate over previous consultations and display them -->
+                <ul>
+                    <li th:each="consultation : ${previousConsultations}">
+                        <button class="goo">
+                            <a th:href="@{'/consultation-details/' + ${consultation.id}}">
+                                <span th:text="${#dates.format(consultation.dateOfVisit, 'dd/MM/yyyy')}">01/01/2022</span>
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add more sections as needed, following the same structure -->
+
+    </div>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        // Initialize all sections to be collapsed
+        document.addEventListener("DOMContentLoaded", function() {
+            var contents = document.querySelectorAll('.toggle-content');
+            contents.forEach(function(content) {
+                content.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>

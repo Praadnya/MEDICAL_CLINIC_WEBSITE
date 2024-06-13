@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Details</title>
+    <style>
+        /* General styles */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+        body {
+            font-family: 'Merriweather', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f8ff; /* Light sky blue background */
+            padding: 20px;
+        }
+		
+		.btn {
+				            display: block;
+				            width: 40%;
+				            padding: 10px;
+				            margin: 10% 0 0 28%;
+				            background-color: rgb(12, 194, 226);
+				            color: white;
+				            border: none;
+				            border-radius: 4px;
+				            text-decoration: none;
+				            text-align: center;
+							font-size: 22px;
+				        }
+						
+				.btn1 {
+			            display: block;
+			            width: 12%;
+			            padding: 5px;
+			            background-color: rgb(12, 194, 226);
+			            color: white;
+			            border: none;
+			            border-radius: 4px;
+			            text-decoration: none;
+			            text-align: center;
+						font-size: 22px;
+						margin: 0 97% 0 0;
+						font-size: 22px
+			        }
+
+        .navbar {
+			background-color: rgb(12, 194, 226); /* Darker shade of blue */
+			            color: white;
+			            padding: 16px 0;
+			            font-size: 28px;
+			            position: fixed;
+			            width: 100%;
+			            top: 0;
+			            left: 0;
+			            box-shadow: 0 0px 2px -2px gray;
+			            display: flex;
+			            justify-content: center;
+			            align-items: center;
+						font-family: 'Merriweather', sans-serif;
+        }
+
+        .navbar span {
+            margin: auto;
+        }
+
+        .navbar .home-button {
+            position: absolute;
+            right: 5%;
+            top: 45%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar .home-button img {
+            width: 26px;
+            height: 26px;
+        }
+
+        .content {
+            margin-top: 10%; /* Adjust to avoid overlap with navbar */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 10% 5% 0 6%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .details p {
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .details strong {
+            font-weight: bold;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #e9f7fd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 600px) {
+            .details {
+                width: 90%;
+            }
+        }
+
+        /* Tablets */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .details {
+                width: 80%;
+            }
+        }
+
+        /* Large screens (desktops and laptops) */
+        @media (min-width: 1025px) {
+            .details {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>Vanamala Clinic</span>
+		
+        <button class="home-button" onclick="window.location.href='/patients'">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home">
+        </button>
+    </div>
+    <div class="content">
+		<a th:href="@{'/patient/'+ ${consultation.patient.id}}">
+					<span th:text="Back"></span>
+				</a>
+        <h1>Consultation Details</h1>
+        <div class="details">
+            <p><strong>Patient Name:</strong> <span th:text="${consultation.patient.name}"></span></p>
+            <p><strong>Phone Number:</strong> <span th:text="${consultation.patient.phone}"></span></p>
+            <p><strong>DOB:</strong> <span th:text="${consultation.patient.dob}"></span></p>
+            <p><strong>Gender:</strong> <span th:text="${consultation.patient.gender}"></span></p>
+            <p th:if="${medicalInfo.allergies != null and not #lists.isEmpty(medicalInfo.allergies)}">
+                <strong>Allergies:</strong>
+                <span th:class="${medicalInfo.allergies[0] != 'NKA' ? 'red-text' : ''}">
+                    <span th:each="allergy, iterStat : ${medicalInfo.allergies}">
+                        <span th:text="${allergy}" th:if="${!#strings.isEmpty(allergy)}"></span>
+                        <span th:if="${!iterStat.last}">,</span>
+                    </span>
+                </span>
+            </p>
+            <p><strong>Consultation Mode:</strong> <span th:text="${consultation.mode}"></span></p>
+            <p><strong>Date of Visit:</strong> <span th:text="${#dates.format(consultation.dateOfVisit, 'dd/MM/yyyy')}"></span></p>
+            <p><strong>Current Complaints:</strong> <span th:text="${consultation.currentComplaints}"></span></p>
+            <p><strong>Diagnosis:</strong> <span th:text="${consultation.diagnosis}"></span></p>
+            <p><strong>Treatment:</strong></p>
+            <ul>
+                <li th:each="medication : ${consultation.treatment}">
+                    <span th:text="${medication.medicineName}"></span> - <span th:text="${medication.frequency}"></span>
+                </li>
+            </ul>
+            <p><strong>Investigations:</strong> <span th:text="${consultation.investigations}"></span></p>
+            <p><strong>Diet Advice:</strong> <span th:text="${consultation.dietAdvice}"></span></p>
+            <p><strong>Exercise Advice:</strong> <span th:text="${consultation.exerciseAdvice}"></span></p>
+            <p><strong>Special Advice:</strong> <span th:text="${consultation.specialAdvice}"></span></p>
+            <p><strong>Review Date:</strong> <span th:text="${consultation.reviewDate}"></span></p>
+        </div>
+		<a th:if="${Id}" th:href="'/prescription/pdf?consultationId	=' + ${Id}" target="_blank" class="btn">Download PDF</a>
+    </div>
+</body>
+</html>

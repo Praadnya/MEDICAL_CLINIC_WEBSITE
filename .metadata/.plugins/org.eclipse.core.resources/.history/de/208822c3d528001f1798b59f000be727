@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		
+		.navbar {
+		            background-color: rgb(12, 194, 226); /* Darker shade of blue */
+		            color: white;
+		            padding: 15px 0;
+		            text-align: center;
+		            font-size: 24px;
+		            position: fixed;
+		            width: 100%;
+		            top: 0;
+		            left: 0;
+		            box-shadow: 0 0px 2px -2px gray;
+		            font-family: 'Merriweather', sans-serif;
+		            display: flex;
+		            flex-direction: row;
+		        }
+
+		        .navbar span {
+		            display: inline-block;
+		            vertical-align: middle;
+		            line-height: normal;
+		            margin: auto;
+		        }
+
+		        .navbar .home-button {
+		            position: absolute;
+		            right: 20px;
+		            top: 15px;
+		            width: 24px;
+		            height: 24px;
+		            background-color: transparent;
+		            border: none;
+		            cursor: pointer;
+		        }
+
+		        .navbar .home-button img {
+		            width: 24px;
+		            height: 24px;
+		            vertical-align: middle;
+		            line-height: normal;
+		        }
+
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff; /* Light sky blue background */
+        padding: 10px;
+        margin: 0;
+        }
+
+        h1 {
+            margin:15% 0 0 0;
+			text-align: center;
+        }
+		
+		.stuff{
+			margin: 0 10% 0 10%;
+		}
+		
+        p {
+            margin: 6% 0 6% 0;
+        }
+
+        .red {
+            color: red;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid rgb(12, 194, 226);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(197, 244, 250);
+        }
+
+        .btn {
+            display: block;
+            width: 40%;
+            padding: 10px;
+            margin: 15% 0 0 28%;
+            background-color: rgb(12, 194, 226);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+			font-size: 22px;
+        }
+
+        .btn:hover {
+            background-color: rgb(0, 160, 195); /* Lighter shade of blue on hover */
+        }
+    </style>
+</head>
+<body>
+	<div class="navbar">
+	        <span>Vanamala Clinic</span>
+	        <button class="home-button" onclick="window.location.href='/patients'">
+	            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home">
+	        </button>
+	</div>
+	
+    <h1>Prescription</h1>
+	<div class = "stuff">
+		<a th:href="@{'/consultation?id='+ ${patient.id}}">
+							<span th:text="Back"></span>
+						</a>
+	<div class="cont"></div>
+	
+    <p><strong>Date of Visit:</strong> <span th:if="${dateOfVisit}" th:text="${dateOfVisit}"></span></p>
+    <p><strong>Name:</strong> <span th:if="${patient.name}" th:text="${patient.name}"></span></p>
+    <p><strong>DOB:</strong> <span th:if="${patient.dob}" th:text="${patient.dob}"></span></p>
+    <p><strong>Gender:</strong> <span th:if="${patient.gender}" th:text="${patient.gender}"></span></p>
+    <p><strong>Allergy:</strong> 
+        <span th:if="${allergies}" th:each="allergy : ${allergies}" 
+              th:text="${allergy}" 
+              th:class="${allergy ne 'NKA'} ? 'red'"></span>
+    </p>
+    <p><strong>Mode of Consultation:</strong> <span th:if="${mode}" th:text="${mode}"></span></p>
+    <p><strong>Current Complaints:</strong> <span th:if="${currentComplaints}" th:text="${currentComplaints}"></span></p>
+    <p><strong>Diagnosis:</strong> <span th:if="${diagnosis}" th:text="${diagnosis}"></span></p>
+    <p><strong>Treatment:</strong></p>
+    <table th:if="${treatment}">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Frequency</th>
+                <th>Number of Days</th>
+                <th>Special Instructions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="medication, i : ${treatment}" th:if="${i.index > 0}">
+                <td th:if="${medication.medicineName}" th:text="${medication.medicineName}"></td>
+                <td th:if="${medication.frequency}" th:text="${medication.frequency}"></td>
+                <td th:if="${medication.numberOfDays}" th:text="${medication.numberOfDays}"></td>
+                <td th:if="${medication.specialInstructions}" th:text="${medication.specialInstructions}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p th:if="${investigations}"><strong>Investigations:</strong> <span th:text="${investigations}"></span></p>
+    <p th:if="${dietAdvice}"><strong>Diet Advice:</strong> <span th:text="${dietAdvice}"></span></p>
+    <p th:if="${exerciseAdvice}"><strong>Exercise Advice:</strong> <span th:text="${exerciseAdvice}"></span></p>
+    <p th:if="${specialAdvice}"><strong>Special Advice:</strong> <span th:text="${specialAdvice}"></span></p>
+    <p th:if="${reviewDate}"><strong>Review Date:</strong> <span th:text="${reviewDate}"></span></p>
+
+    <!-- Download button -->
+    <a th:if="${Id}" th:href="'/prescription/pdf?consultationId	=' + ${Id}" target="_blank" class="btn">Download PDF</a>
+	</div>
+	</body>
+	</html>
+
