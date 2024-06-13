@@ -36,8 +36,8 @@ public class SecurityConfig {
     @Bean
     UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
-                .username("user")
-                .password("{noop}password") // Use {noop} to indicate that no password encoding is applied
+                .username("Sujatha")
+                .password("{noop}vanclinic") // Use {noop} to indicate that no password encoding is applied
                 .roles("USER")
                 .build();
 
