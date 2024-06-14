@@ -9,9 +9,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 public class SecurityConfig {
+
+    @Value("${APP_USERNAME}")
+    private String username;
+
+    @Value("${APP_PASSWORD}")
+    private String password;
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -36,8 +43,8 @@ public class SecurityConfig {
     @Bean
     UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
-                .username("Sujatha")
-                .password("{noop}vanclinic") // Use {noop} to indicate that no password encoding is applied
+                .username(username)
+                .password("{noop}"+password) // Use {noop} to indicate that no password encoding is applied
                 .roles("USER")
                 .build();
 
