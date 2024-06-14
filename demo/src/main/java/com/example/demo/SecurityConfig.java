@@ -16,9 +16,9 @@ import org.springframework.beans.factory.annotation.Value;
 public class SecurityConfig {
 	
 	
-    private String username = "Sujatha";
+    private String username = "";
 
-    private String password = "vanclinic";
+    private String password = "********";
 	
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
