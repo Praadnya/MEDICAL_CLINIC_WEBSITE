@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,7 +13,12 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
+	
+	
+    private String username = "Sujatha";
 
+    private String password = "vanclinic";
+	
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -36,8 +42,8 @@ public class SecurityConfig {
     @Bean
     UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
-                .username("user")
-                .password("{noop}password") // Use {noop} to indicate that no password encoding is applied
+                .username(username)
+                .password("{noop}"+password) // Use {noop} to indicate that no password encoding is applied
                 .roles("USER")
                 .build();
 
